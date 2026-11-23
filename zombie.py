@@ -68,3 +68,5 @@ class Zombie:
             feet_Y = self.y - self.size / 2
             self.size *= 0.5
             self.y = feet_Y + self.size / 2
+        else:
+            game_world.remove_object(self)
