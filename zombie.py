@@ -59,3 +59,8 @@ class Zombie:
         half_size = self.size / 2
         return (self.x - half_size, self.y - half_size,
                 self.x + half_size, self.y + half_size)
+
+    def take_hit(self):
+        self.hit_count += 1
+        if self.hit_count == 1:
+            self.size *= 0.5
