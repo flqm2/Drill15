@@ -61,6 +61,10 @@ class Zombie:
                 self.x + half_size, self.y + half_size)
 
     def take_hit(self):
+        if self.hit_count >= 2:
+            return
         self.hit_count += 1
         if self.hit_count == 1:
+            feet_Y = self.y - self.size / 2
             self.size *= 0.5
+            self.y = feet_Y + self.size / 2
