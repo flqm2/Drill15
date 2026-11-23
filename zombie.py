@@ -35,6 +35,7 @@ class Zombie:
         self.frame = random.randint(0, 9)
         self.dir = random.choice([-1, 1])
         self.size = ZOMBIE_SIZE
+        self.hit_count = 0
 
     def update(self):
         dt = game_framework.frame_time
