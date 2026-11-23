@@ -65,12 +65,12 @@ class Zombie:
             return
         self.hit_count += 1
         if self.hit_count == 1:
-            feet_Y = self.y - self.size / 2
+            feet_y = self.y - self.size / 2
             self.size *= 0.5
-            self.y = feet_Y + self.size / 2
+            self.y = feet_y + self.size / 2
         else:
             game_world.remove_object(self)
 
-    def handel_Collision(self, group, other):
+    def handle_collision(self, group, other):
         if group == 'ball:zombie':
             self.take_hit()
