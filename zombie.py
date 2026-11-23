@@ -45,3 +45,10 @@ class Zombie:
         elif self.x < MIN_X:
             self.dir = 1
         self.x = clamp(MIN_X, self.x, MAX_X)
+
+    def draw(self):
+        image = Zombie.images['Walk'][int(self.frame)]
+        if self.dir < 0:
+            image.composite_draw(0, 'h', self.x, self.y, self.size, self.size)
+        else:
+            image.draw(self.x, self.y, self.size, self.size)
