@@ -70,3 +70,7 @@ class Zombie:
             self.y = feet_Y + self.size / 2
         else:
             game_world.remove_object(self)
+
+    def handel_Collision(self, group, other):
+        if group == 'ball:zombie':
+            self.take_hit()
