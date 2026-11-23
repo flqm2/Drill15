@@ -43,6 +43,12 @@ def init():
     for ball in balls:
         game_world.add_collision_pair('boy:ball', None, ball)
 
+    for zombie in zombies:
+        game_world.add_collision_pair('ball:zombie', None, zombie)
+    game_world.add_collision_pair('boy:zombie', boy, None)
+    for zombie in zombies:
+        game_world.add_collision_pair('boy:zombie', None, zombie)
+
     
 
 
@@ -64,12 +70,6 @@ def finish():
 def update():
     game_world.update()
     game_world.handle_collision()
-    for ball in balls:
-        if game_world.collide(boy, ball):
-            print('COLLISION boy : ball')
-            boy.ball_count += 1
-            game_world.remove_object(ball)
-            balls.remove(ball)
 
 def render():
     clear_canvas()
